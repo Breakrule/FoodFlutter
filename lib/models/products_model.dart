@@ -69,73 +69,45 @@ class ProductsModel {
 }
 
 // class Product {
-//   int? totalSize;
-//   int? typeId;
-//   int? offset;
-//   late List<ProductsModel> products;
+//     List<ProductElement> products;
+//     int total;
+//     int skip;
+//     int limit;
 
-//   Product({
-//     required this.totalSize,
-//     required this.typeId,
-//     required this.offset,
-//     required this.products,
-//   });
+//     Product({
+//         required this.products,
+//         required this.total,
+//         required this.skip,
+//         required this.limit,
+//     });
 
-//   factory Product.fromJson(Map<String, dynamic> json) {
-//     try {
-//       return Product(
-//         totalSize: json['total_size'] ?? 0,
-//         typeId: json['type_id'] ?? 0,
-//         offset: json['offset'] ?? 0,
-//         products: (json['products'] as List<dynamic>?)
-//                 ?.map((x) => ProductsModel.fromJson(x))
-//                 ?.toList() ??
-//             [],
-//       );
-//     } catch (e) {
-//       print('Error parsing product: $e');
-//       return Product(totalSize: 0, typeId: 0, offset: 0, products: []);
-//     }
-//   }
 // }
 
-// class ProductsModel {
-//   int? id;
-//   String? name;
-//   String? description;
-//   int? price;
-//   int? stars;
-//   String? img;
-//   String? location;
-//   String? createdAt;
-//   String? updatedAt;
-//   int? typeId;
+// class ProductElement {
+//     int id;
+//     String title;
+//     String description;
+//     int price;
+//     double discountPercentage;
+//     double rating;
+//     int stock;
+//     String brand;
+//     String category;
+//     String thumbnail;
+//     List<String> images;
 
-//   ProductsModel({
-//     this.id,
-//     this.name,
-//     this.description,
-//     this.price,
-//     this.stars,
-//     this.img,
-//     this.location,
-//     this.createdAt,
-//     this.updatedAt,
-//     this.typeId,
-//   });
+//     ProductElement({
+//         required this.id,
+//         required this.title,
+//         required this.description,
+//         required this.price,
+//         required this.discountPercentage,
+//         required this.rating,
+//         required this.stock,
+//         required this.brand,
+//         required this.category,
+//         required this.thumbnail,
+//         required this.images,
+//     });
 
-//   factory ProductsModel.fromJson(Map<String, dynamic> json) {
-//     return ProductsModel(
-//       id: json['id'],
-//       name: json['name'],
-//       description: json['description'],
-//       price: json['price'],
-//       stars: json['stars'],
-//       img: json['img'],
-//       location: json['location'],
-//       createdAt: json['created_at'],
-//       updatedAt: json['updated_at'],
-//       typeId: json['type_id'],
-//     );
-//   }
 // }
