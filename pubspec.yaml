@@ -1,0 +1,38 @@
+name: food_delivery_rezky
+description: Full stack flutter project.
+
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  cupertino_icons: ^1.0.2
+  dots_indicator: ^3.0.0
+  flutter:
+    sdk: flutter
+  get: ^4.6.5
+
+dev_dependencies:
+  flutter_lints: ^2.0.0
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/image/
+
+fonts:
+  - family: Roboto
+    fonts:
+      - asset: assets/font/Roboto-Regular.ttf
+        weight: 400
+      - asset: assets/font/Roboto-Medium.ttf
+        weight: 500
+      - asset: assets/font/Roboto-Bold.ttf
+        weight: 700
+      - asset: assets/font/Roboto-Black.ttf
+        weight: 900
