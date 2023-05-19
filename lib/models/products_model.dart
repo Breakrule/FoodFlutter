@@ -1,6 +1,9 @@
 class Product {
+  // ignore: unused_field
   int? _totalSize;
+  // ignore: unused_field
   int? _typeId;
+  // ignore: unused_field
   int? _offset;
   late List<ProductsModel> _products;
   List<ProductsModel> get products => _products;
