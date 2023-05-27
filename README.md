@@ -13,7 +13,7 @@
 11. Payment (Paypal)
 12. Create new products on the backend
 13. See order details
-14. Update order status
+14. Update order statuss
 
 ### [Course from dbestech](https://www.youtube.com/watch?v=7dAt-JMSCVQ&list=PLu6UYP9sAail1FBWZZX_4AAABSII8dqpb)
 
