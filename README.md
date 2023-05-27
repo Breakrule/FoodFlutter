@@ -1,6 +1,5 @@
 # Project Flutter Food Delivery
-
-# Major features
+### Major features
 1. Show products based on category
 2. Shopping cart
 3. Place your order
@@ -16,5 +15,5 @@
 13. See order details
 14. Update order status
 
-[Course from dbestech](https://www.youtube.com/watch?v=7dAt-JMSCVQ&list=PLu6UYP9sAail1FBWZZX_4AAABSII8dqpb)
+### [Course from dbestech](https://www.youtube.com/watch?v=7dAt-JMSCVQ&list=PLu6UYP9sAail1FBWZZX_4AAABSII8dqpb)
 
