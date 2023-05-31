@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:food_delivery_rezky/controller/cart_controller.dart';
 import 'package:food_delivery_rezky/controller/popular_product_controller.dart';
+import 'package:food_delivery_rezky/pages/cart/cart_page.dart';
 import 'package:food_delivery_rezky/pages/home/main_food_page.dart';
 import 'package:food_delivery_rezky/utils/app_constant.dart';
 import 'package:food_delivery_rezky/utils/colors.dart';
@@ -60,14 +61,19 @@ class PopularFoodDetail extends StatelessWidget {
                         children: [
                           const AppIcon(icon: Icons.shopping_cart_outlined),
                           Get.find<PopularProductController>().totalItems >= 1
-                              ? const Positioned(
+                              ? Positioned(
                                   right: 0,
                                   top: 0,
-                                  child: AppIcon(
-                                    icon: Icons.circle,
-                                    size: 20,
-                                    iconColor: Colors.transparent,
-                                    backgroundColor: AppColors.mainColor,
+                                  child: GestureDetector(
+                                    onTap: () {
+                                      Get.to(() => CartPage());
+                                    },
+                                    child: AppIcon(
+                                      icon: Icons.circle,
+                                      size: 20,
+                                      iconColor: Colors.transparent,
+                                      backgroundColor: AppColors.mainColor,
+                                    ),
                                   ),
                                 )
                               : Container(),

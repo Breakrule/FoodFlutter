@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:food_delivery_rezky/controller/cart_controller.dart';
 import 'package:food_delivery_rezky/data/repository/popular_product_repo.dart';
+import 'package:food_delivery_rezky/models/cart_model.dart';
 import 'package:food_delivery_rezky/models/products_model.dart';
 import 'package:food_delivery_rezky/utils/colors.dart';
 import 'package:get/get.dart';
@@ -43,9 +44,6 @@ class PopularProductController extends GetxController {
     update();
   }
 
-  // _inCartItems = 2;
-  // _quantity = 0;
-  // _quantity = -2;
   int checkQuantity(int quantity) {
     if ((_inCartItems + quantity < 0)) {
       Get.snackbar(
@@ -104,5 +102,9 @@ class PopularProductController extends GetxController {
 
   int get totalItems {
     return _cart.totalItems;
+  }
+
+  List<CartModel> get getItems {
+    return _cart.getItems;
   }
 }
