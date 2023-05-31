@@ -70,7 +70,7 @@ class PopularProductController extends GetxController {
     }
   }
 
-  void initProduct(ProductsModel product, CartController cart) {
+  void initProduct(ProductModel product, CartController cart) {
     _quantity = 0;
     _inCartItems = 0;
     _cart = cart;
@@ -85,7 +85,7 @@ class PopularProductController extends GetxController {
     print("the quantity in the cart is " + _inCartItems.toString());
   }
 
-  void addItem(ProductsModel product) {
+  void addItem(ProductModel product) {
     _cart.addItem(product, _quantity);
 
     _quantity = 0;

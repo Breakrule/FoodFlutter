@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food_delivery_rezky/controller/cart_controller.dart';
-import 'package:food_delivery_rezky/pages/home/main_food_page.dart';
+import 'package:food_delivery_rezky/routes/route_helper.dart';
 import 'package:food_delivery_rezky/utils/app_constant.dart';
 import 'package:food_delivery_rezky/utils/colors.dart';
 import 'package:food_delivery_rezky/utils/dimension.dart';
@@ -33,7 +33,7 @@ class CartPage extends StatelessWidget {
                 SizedBox(width: Dimensions.width20 * 5),
                 GestureDetector(
                   onTap: () {
-                    Get.to(() => MainFoodPage());
+                    Get.toNamed(RouteHelper.getInitial());
                   },
                   child: AppIcon(
                     icon: Icons.home_outlined,
@@ -63,8 +63,9 @@ class CartPage extends StatelessWidget {
                 context: context,
                 removeTop: true,
                 child: GetBuilder<CartController>(builder: (cartController) {
+                  var _cartList = cartController.getItems;
                   return ListView.builder(
-                      itemCount: cartController.getItems.length,
+                      itemCount: _cartList.length,
                       itemBuilder: (_, index) {
                         return Container(
                           width: double.maxFinite,
@@ -109,9 +110,8 @@ class CartPage extends StatelessWidget {
                                             MainAxisAlignment.spaceBetween,
                                         children: [
                                           BigText(
-                                              text: cartController
-                                                  .getItems[index].price
-                                                  .toString(),
+                                              text:
+                                                  "\$ ${cartController.getItems[index].price}",
                                               color: Colors.redAccent),
                                           Container(
                                             padding: EdgeInsets.only(
@@ -130,7 +130,10 @@ class CartPage extends StatelessWidget {
                                               children: [
                                                 GestureDetector(
                                                     onTap: () {
-                                                      // popularProduct.setQuantity(false);
+                                                      cartController.addItem(
+                                                          _cartList[index]
+                                                              .product!,
+                                                          -1);
                                                     },
                                                     child: const Icon(
                                                         Icons.remove,
@@ -139,13 +142,19 @@ class CartPage extends StatelessWidget {
                                                 SizedBox(
                                                     width:
                                                         Dimensions.width10 / 2),
-                                                BigText(text: "0"),
+                                                BigText(
+                                                    text: _cartList[index]
+                                                        .quantity
+                                                        .toString()),
                                                 SizedBox(
                                                     width:
                                                         Dimensions.width10 / 2),
                                                 GestureDetector(
                                                   onTap: () {
-                                                    // popularProduct.setQuantity(true);
+                                                    cartController.addItem(
+                                                        _cartList[index]
+                                                            .product!,
+                                                        1);
                                                   },
                                                   child: const Icon(Icons.add,
                                                       color:

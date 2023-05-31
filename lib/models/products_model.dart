@@ -7,8 +7,8 @@ class Product {
   int? _typeId;
   // ignore: unused_field
   int? _offset;
-  late List<ProductsModel> _products;
-  List<ProductsModel> get products => _products;
+  late List<ProductModel> _products;
+  List<ProductModel> get products => _products;
 
   Product({
     required totalSize,
@@ -27,15 +27,15 @@ class Product {
     _typeId = json['type_id'];
     _offset = json['offset'];
     if (json['products'] != null) {
-      _products = <ProductsModel>[];
+      _products = <ProductModel>[];
       json['products'].forEach((v) {
-        _products.add(ProductsModel.fromJson(v));
+        _products.add(ProductModel.fromJson(v));
       });
     }
   }
 }
 
-class ProductsModel {
+class ProductModel {
   int? id;
   String? name;
   String? description;
@@ -47,7 +47,7 @@ class ProductsModel {
   String? updatedAt;
   int? typeId;
 
-  ProductsModel(
+  ProductModel(
       {this.id,
       this.name,
       this.description,
@@ -59,7 +59,7 @@ class ProductsModel {
       this.updatedAt,
       this.typeId});
 
-  ProductsModel.fromJson(Map<String, dynamic> json) {
+  ProductModel.fromJson(Map<String, dynamic> json) {
     id = json['id'];
     name = json['name'];
     description = json['description'];
